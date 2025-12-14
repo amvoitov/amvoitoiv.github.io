@@ -15,8 +15,8 @@ github: https://github.com/amvoitov
   <div class="col-12 col-lg-6">
     <div class="site_contact_card">
       <div class="site_contact_card_title">Связаться</div>
-      <div class="site_contact_row"><b>Email:</b> <a href="mailto:you@mail.com">you@mail.com</a></div>
-      <div class="site_contact_row"><b>Telegram:</b> <a href="https://t.me/yourname">@yourname</a></div>
+      <div class="site_contact_row"><b>Email:</b> <a href="mailto:andr@vojtov.ru">andr@vojtov.ru</a></div>
+      <div class="site_contact_row"><b>Telegram:</b> <a href="https://t.me/byrnison12">@byrnison12</a></div>
 
       <div class="mt-3 d-flex flex-wrap gap-2">
         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
@@ -29,8 +29,7 @@ github: https://github.com/amvoitov
   <div class="col-12 col-lg-6">
     <div class="site_contact_card">
       <div class="site_contact_card_title">Профили</div>
-      <div class="site_contact_row"><b>HH:</b> <a href="https://hh.ru/resume/XXXXXXXXXXXX">профиль</a></div>
-      <div class="site_contact_row"><b>GitHub:</b> <a href="https://github.com/amvoitov">github.com/amvoitov</a></div>
+      <div class="site_contact_row"><b>HH:</b> <a href="https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b">Резюме</a></div>
     </div>
   </div>
 </div>
