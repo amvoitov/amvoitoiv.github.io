@@ -291,3 +291,25 @@ hr{ border:0; border-top:1px solid var(--border); margin: 16px 0; }
   font-size: 12px;
 }
 .footer__sep{ opacity:.5; }
+
+/* ===== Mobile spacing (gutters) ===== */
+:root { --gutter: 20px; }
+
+/* safe-area для iOS + базовые отступы */
+.container{
+  padding-left: max(var(--gutter), env(safe-area-inset-left));
+  padding-right: max(var(--gutter), env(safe-area-inset-right));
+}
+
+/* на телефонах чуть меньше отступы */
+@media (max-width: 600px){
+  :root { --gutter: 14px; }
+  .main{ padding: 18px 0 28px; }
+  .content{ padding: 16px; border-radius: 14px; }
+  .header__inner{ padding: 12px 0; }
+}
+
+/* совсем маленькие экраны */
+@media (max-width: 380px){
+  :root { --gutter: 12px; }
+}
