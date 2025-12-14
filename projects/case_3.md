@@ -1,6 +1,6 @@
 ---
 title: "Кейс 1: TODO"
-permalink: /projects/case_1/
+permalink: /projects/case_3/
 ---
 
 <a class="site_btn" href="{{ '/projects/' | relative_url }}">← Назад к проектам</a>
