@@ -31,12 +31,6 @@ hh: https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b
         <b>Телефон:</b>
           <a href="tel:{{ page.phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}">{{ page.phone }}</a>
       </div>
-
-      <div class="mt-3 d-flex flex-wrap gap-2">
-        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
-          Написать сообщение
-        </button>
-      </div>
     </div>
   </div>
 
