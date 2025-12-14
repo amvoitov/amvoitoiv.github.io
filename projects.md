@@ -5,30 +5,37 @@ permalink: /projects/
 
 # Кейсы
 
-Ниже — ключевые кейсы. В каждом: контекст → цель → моя роль → действия → результат → артефакты.
+<p class="text-muted mb-3">
+В каждом кейсе: контекст → цель → роль → действия → результат → артефакты.
+</p>
 
-<div class="card-grid">
+<div class="row g-3">
 
-  <a class="card" href="{{ '/projects/case_1/' | relative_url }}">
-    <div class="card-title">Кейс 1: Tracker/Wiki — контур управления</div>
-    <div class="card-meta">PM/PO • процессы • дашборды • внедрение</div>
-    <p class="card-text">Запустил единый процесс задач, статусов и отчётности + базу знаний. Повысил прозрачность и управляемость.</p>
-    <span class="tag">процессы</span><span class="tag">стейкхолдеры</span><span class="tag">дашборды</span>
-  </a>
+  <div class="col-12 col-lg-6">
+    <a class="site_card" href="{{ '/projects/case_1/' | relative_url }}">
+      <div class="site_card_title">Кейс 1: TODO</div>
+      <div class="site_card_meta">PM/PO • …</div>
+      <p class="site_card_text">Заполнится позже.</p>
+      <span class="tag">процессы</span><span class="tag">качество</span><span class="tag">внедрение</span>
+    </a>
+  </div>
 
-  <a class="card" href="{{ '/projects/case_2/' | relative_url }}">
-    <div class="card-title">Кейс 2: Название</div>
-    <div class="card-meta">PM/PO • …</div>
-    <p class="card-text">1–2 строки: что сделали и какой эффект.</p>
-    <span class="tag">качество</span><span class="tag">требования</span><span class="tag">интеграции</span>
-  </a>
+  <div class="col-12 col-lg-6">
+    <a class="site_card" href="{{ '/projects/case_2/' | relative_url }}">
+      <div class="site_card_title">Кейс 2: TODO</div>
+      <div class="site_card_meta">PM/PO • …</div>
+      <p class="site_card_text">Заполнится позже.</p>
+      <span class="tag">требования</span><span class="tag">данные</span><span class="tag">приёмка</span>
+    </a>
+  </div>
 
-  <a class="card" href="{{ '/projects/case_3/' | relative_url }}">
-  <div class="card-title">Кейс 3: Весовая система бункера перегрузчика</div>
-  <div class="card-meta">PM/PO/аналитик • embedded + Android + портал • телеметрия</div>
-  <p class="card-text">Учёт урожая и расчёт оплаты: Bluetooth-данные, офлайн-хранение, синхронизация в портал. Эффект: ↓ споры −80%, ↓ потери/воровство −70%.</p>
-  <span class="tag">MVP→серия</span><span class="tag">качество данных</span><span class="tag">телеметрия</span>
-</a>
-
+  <div class="col-12 col-lg-6">
+    <a class="site_card" href="{{ '/projects/case_3/' | relative_url }}">
+      <div class="site_card_title">Кейс 3: Весовая система бункера перегрузчика</div>
+      <div class="site_card_meta">PM/PO/аналитик • embedded + Android + портал</div>
+      <p class="site_card_text">Учёт урожая и расчёт оплаты. Эффект: −80% спорных, −70% потерь, +20% продажи.</p>
+      <span class="tag">MVP→серия</span><span class="tag">телеметрия</span><span class="tag">офлайн</span>
+    </a>
+  </div>
 
 </div>

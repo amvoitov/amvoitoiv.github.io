@@ -5,81 +5,70 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{{ page.title }} · {{ site.title }}</title>
     <meta name="description" content="{{ site.description }}" />
+
+    <!-- Bootstrap (local) -->
+    <link rel="stylesheet" href="{{ '/assets/vendor/bootstrap_5_3_8/css/bootstrap.min.css' | relative_url }}">
+
+    <!-- Your styles (after Bootstrap) -->
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
   </head>
 
   <body>
-    <header class="header">
-      <div class="container header__inner">
-        <div class="brand">
-          <div class="brand__title">{{ site.title }}</div>
-          <div class="brand__sub">{{ site.description }}</div>
+    <header class="site_header">
+      <div class="container site_container site_header_inner">
+        <div class="site_brand">
+          <div class="site_brand_title">{{ site.title }}</div>
+          <div class="site_brand_sub">{{ site.description }}</div>
         </div>
 
-        <nav class="nav">
-          <a
-            class="nav__link {% if page.url == '/' %}is-active{% endif %}"
-            href="{{ '/' | relative_url }}"
-          >Главная</a>
-
-          <a
-            class="nav__link {% if page.url contains '/projects' %}is-active{% endif %}"
-            href="{{ '/projects/' | relative_url }}"
-          >Проекты</a>
-
-          <a
-            class="nav__link {% if page.url contains '/about' %}is-active{% endif %}"
-            href="{{ '/about/' | relative_url }}"
-          >Обо мне</a>
-
-          <a
-            class="nav__link {% if page.url contains '/contact' %}is-active{% endif %}"
-            href="{{ '/contact/' | relative_url }}"
-          >Контакты</a>
-
-          <a
-            class="nav__btn"
-            href="{{ '/assets/files/portfolio.pdf' | relative_url }}"
-          >PDF</a>
+        <nav class="site_nav" aria-label="Основная навигация">
+          <a class="site_nav_link {% if page.url == '/' %}is-active{% endif %}" href="{{ '/' | relative_url }}">Главная</a>
+          <a class="site_nav_link {% if page.url contains '/projects' %}is-active{% endif %}" href="{{ '/projects/' | relative_url }}">Проекты</a>
+          <a class="site_nav_link {% if page.url contains '/about' %}is-active{% endif %}" href="{{ '/about/' | relative_url }}">Обо мне</a>
+          <a class="site_nav_link {% if page.url contains '/contact' %}is-active{% endif %}" href="{{ '/contact/' | relative_url }}">Контакты</a>
+          <a class="site_nav_btn" href="{{ '/assets/files/portfolio.pdf' | relative_url }}">PDF</a>
         </nav>
       </div>
     </header>
 
-    <main class="container main">
-      <article class="content">
+    <main class="container site_container site_main">
+      <article class="site_content">
         {{ content }}
       </article>
     </main>
 
-    <footer class="footer">
-        <div class="container footer__inner">
-    {% assign contact_page = site.pages | where: "id", "contact" | first %}
+    <footer class="site_footer">
+      <div class="container site_container footer__inner">
+        {% assign contact_page = site.pages | where: "id", "contact" | first %}
 
-    <span>© {{ site.title }}</span>
+        <span>© {{ site.title }}</span>
 
-    {% if contact_page %}
-      {% if contact_page.email %}
-        <span class="footer__sep">·</span>
-        <a href="mailto:{{ contact_page.email }}">{{ contact_page.email }}</a>
-      {% endif %}
+        {% if contact_page %}
+          {% if contact_page.email %}
+            <span class="footer__sep">·</span>
+            <a href="mailto:{{ contact_page.email }}">{{ contact_page.email }}</a>
+          {% endif %}
 
-      {% if contact_page.telegram %}
-        {% assign tg = contact_page.telegram | remove: '@' %}
-        <span class="footer__sep">·</span>
-        <a href="https://t.me/{{ tg }}">@{{ tg }}</a>
-      {% endif %}
+          {% if contact_page.telegram %}
+            {% assign tg = contact_page.telegram | remove: '@' %}
+            <span class="footer__sep">·</span>
+            <a href="https://t.me/{{ tg }}">@{{ tg }}</a>
+          {% endif %}
 
-      {% if contact_page.hh %}
-        <span class="footer__sep">·</span>
-        <a href="{{ contact_page.hh }}">HH</a>
-      {% endif %}
+          {% if contact_page.hh %}
+            <span class="footer__sep">·</span>
+            <a href="{{ contact_page.hh }}">HH</a>
+          {% endif %}
 
-      {% if contact_page.github %}
-        <span class="footer__sep">·</span>
-        <a href="{{ contact_page.github }}">GitHub</a>
-      {% endif %}
-    {% endif %}
-        </div>
+          {% if contact_page.github %}
+            <span class="footer__sep">·</span>
+            <a href="{{ contact_page.github }}">GitHub</a>
+          {% endif %}
+        {% endif %}
+      </div>
     </footer>
+
+    <!-- Bootstrap JS bundle (local, for modals/dropdowns/collapse) -->
+    <script src="{{ '/assets/vendor/bootstrap_5_3_8/js/bootstrap.bundle.min.js' | relative_url }}"></script>
   </body>
 </html>
