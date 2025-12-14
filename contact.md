@@ -1,12 +1,14 @@
 ---
+---
 title: "Контакты"
 permalink: /contact/
 id: contact
 
-email: you@mail.com
-telegram: yourname
-hh: https://hh.ru/resume/XXXXXXXXXXXX
-github: https://github.com/amvoitov
+email: <a href="mailto:andr@vojtov.ru">andr@vojtov.ru</a>
+telegram: <a href="https://t.me/byrnison12">@byrnison12</a>
+hh: <a href="https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b">Резюме</a></div>
+Тел: +7 (993) 448-69-80
+---
 ---
 
 # Контакты
@@ -17,6 +19,7 @@ github: https://github.com/amvoitov
       <div class="site_contact_card_title">Связаться</div>
       <div class="site_contact_row"><b>Email:</b> <a href="mailto:andr@vojtov.ru">andr@vojtov.ru</a></div>
       <div class="site_contact_row"><b>Telegram:</b> <a href="https://t.me/byrnison12">@byrnison12</a></div>
+      <div class="site_contact_row"><b>Тел:</b>+7 (993) 448-69-80</div>
 
       <div class="mt-3 d-flex flex-wrap gap-2">
         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
