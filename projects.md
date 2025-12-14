@@ -17,7 +17,7 @@ permalink: /projects/
       <div class="card-body">
         <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
           <h3 class="h5 mb-0">Кейс 1: Весовая ЛИЛИАНИ</h3>
-          <span class="badge text-bg-light border">Embedded • Android • Portal</span>
+          <span class="badge text-bg-light border">Embedded • Android • Web</span>
         </div>
 
         <p class="text-muted mb-3">
@@ -53,7 +53,6 @@ permalink: /projects/
 
         <div class="d-flex flex-wrap gap-2">
           <a class="btn btn-primary btn-sm" href="{{ '/projects/case_1/' | relative_url }}">Открыть кейс</a>
-          <a class="btn btn-outline-secondary btn-sm" href="{{ '/projects/case_1/' | relative_url }}#artifacts">Артефакты</a>
         </div>
       </div>
     </div>
