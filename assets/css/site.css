@@ -262,3 +262,31 @@ hr{ border:0; border-top:1px solid var(--border); margin: 16px 0; }
   margin-left: 10px;
   vertical-align: middle;
 }
+/* Высота шапки сайта (подстрой, если нужно). */
+:root{
+  --site_header_h: 78px;
+}
+
+/* Sticky только на десктопе, чтобы на мобиле не съедало экран */
+@media (min-width: 992px){
+  .case_topbar{
+    position: sticky;
+    top: calc(var(--site_header_h) + 12px);
+    z-index: 40;
+  }
+}
+
+/* Чтобы при залипании выглядело аккуратно */
+.case_topbar_card{
+  border-radius: 16px;
+}
+
+/* чуть “компактнее” KPI-карточки */
+.case_kpi_card{
+  border-radius: 14px;
+}
+
+/* Чтобы якоря/заголовки не уезжали под шапку при переходах */
+h2, h3, h4{
+  scroll-margin-top: calc(var(--site_header_h) + 160px);
+}
