@@ -1,4 +1,20 @@
-/* Buttons */
+/* ========== Base ========== */
+body { font-size: 16px; }
+p { line-height: 1.55; }
+h1, h2, h3 { margin-top: 18px; }
+hr { border: 0; border-top: 1px solid #e5e7eb; margin: 18px 0; }
+
+/* Normalize link colors (avoid purple visited links) */
+a, a:visited { color: #0969da; }
+a:hover { text-decoration: none; }
+
+/* Hide "View My GitHub Profile" / project link block in minimal theme */
+.view { display: none; }
+
+/* ========== Nav ========== */
+.nav { margin: 10px 0 18px 0; }
+
+/* ========== Buttons ========== */
 .btn {
   display: inline-block;
   padding: 10px 14px;
@@ -7,16 +23,17 @@
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
+  background: #fff;
 }
-
 .btn:hover {
   text-decoration: none;
+  border-color: #b6c0cc;
 }
 
-/* Cards (Projects) */
+/* ========== Cards (Projects) ========== */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
   gap: 14px;
   margin-top: 14px;
 }
@@ -34,24 +51,20 @@
   background: #fff;
 }
 
-.card:hover {
-  text-decoration: none;
-}
+.card:hover { text-decoration: none; }
 
 .card-title {
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 6px;
 }
 
 .card-meta {
   font-size: 13px;
-  opacity: 0.8;
+  opacity: 0.85;
   margin-bottom: 10px;
 }
 
-.card-text {
-  margin: 0 0 10px 0;
-}
+.card-text { margin: 0 0 10px 0; }
 
 .tag {
   display: inline-block;
@@ -61,4 +74,13 @@
   border-radius: 999px;
   font-size: 12px;
   opacity: 0.9;
+}
+
+/* ========== Content blocks ========== */
+.callout {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  margin: 12px 0;
 }

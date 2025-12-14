@@ -2,21 +2,18 @@
 title: "Главная"
 ---
 
+{% include nav.html %}
+
+<div class="callout">
 Коротко: управление проектами и продуктом в технике/IT, требования, интеграции, качество данных, коммуникации со стейкхолдерами.
+</div>
 
-## Быстрые ссылки
-<a class="btn" href="{{ '/projects' | relative_url }}">Проекты</a>
-<a class="btn" href="{{ '/about' | relative_url }}">Обо мне</a>
-<a class="btn" href="{{ '/contact' | relative_url }}">Контакты</a>
-<a class="btn" href="{{ '/assets/files/portfolio.pdf' | relative_url }}">PDF-портфолио</a>
-
----
+## Быстрое
+<a class="btn" href="{{ '/projects' | relative_url }}">Смотреть кейсы</a>
+<a class="btn" href="{{ '/assets/files/portfolio.pdf' | relative_url }}">Скачать PDF</a>
 
 ## Сильные стороны
 - Управление сроками, рисками и ожиданиями стейкхолдеров
 - Требования: сбор, согласование, декомпозиция, контроль изменений
 - Интеграции и сложные контуры (данные/шины/сервисы)
 - Качество: методики проверок, чек-листы, контроль метрик
-
-## Что дальше
-Начни с раздела **[Проекты]({{ '/projects' | relative_url }})** — там кейсы.
