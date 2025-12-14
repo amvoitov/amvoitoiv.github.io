@@ -5,8 +5,8 @@ id: contact
 
 email: andr@vojtov.ru
 telegram: byrnison12
+phone: +7 (993) 448-69-80
 hh: https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b
-Тел: +7 (993) 448-69-80
 ---
 
 # Контакты
@@ -27,6 +27,11 @@ hh: https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b
         <a href="https://t.me/{{ tg }}">@{{ tg }}</a>
       </div>
 
+      <div class="site_contact_row">
+        <b>Телефон:</b>
+          <a href="tel:{{ page.phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}">{{ page.phone }}</a>
+      </div>
+
       <div class="mt-3 d-flex flex-wrap gap-2">
         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
           Написать сообщение
@@ -42,12 +47,6 @@ hh: https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b
       {% if page.hh %}
       <div class="site_contact_row">
         <b>HH:</b> <a href="{{ page.hh }}">Резюме</a>
-      </div>
-      {% endif %}
-
-      {% if page.github %}
-      <div class="site_contact_row">
-        <b>GitHub:</b> <a href="{{ page.github }}">{{ page.github | remove: 'https://' }}</a>
       </div>
       {% endif %}
     </div>

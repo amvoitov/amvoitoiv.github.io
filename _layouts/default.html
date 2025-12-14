@@ -60,9 +60,14 @@
             <a href="{{ contact_page.hh }}">HH</a>
           {% endif %}
 
-          {% if contact_page.github %}
+          {% if contact_page.phone %}
+          {% assign phone_tel = contact_page.phone
+            | replace: ' ', ''
+            | replace: '(', ''
+            | replace: ')', ''
+            | replace: '-', '' %}
             <span class="footer__sep">·</span>
-            <a href="{{ contact_page.github }}">GitHub</a>
+            <a href="tel:{{ phone_tel }}">{{ contact_page.phone }}</a>
           {% endif %}
         {% endif %}
       </div>
