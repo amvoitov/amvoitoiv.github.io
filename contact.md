@@ -1,14 +1,12 @@
 ---
----
 title: "Контакты"
 permalink: /contact/
 id: contact
 
-email: <a href="mailto:andr@vojtov.ru">andr@vojtov.ru</a>
-telegram: <a href="https://t.me/byrnison12">@byrnison12</a>
-hh: <a href="https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b">Резюме</a></div>
+email: andr@vojtov.ru
+telegram: byrnison12
+hh: https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b
 Тел: +7 (993) 448-69-80
----
 ---
 
 # Контакты
@@ -17,9 +15,17 @@ hh: <a href="https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b"
   <div class="col-12 col-lg-6">
     <div class="site_contact_card">
       <div class="site_contact_card_title">Связаться</div>
-      <div class="site_contact_row"><b>Email:</b> <a href="mailto:andr@vojtov.ru">andr@vojtov.ru</a></div>
-      <div class="site_contact_row"><b>Telegram:</b> <a href="https://t.me/byrnison12">@byrnison12</a></div>
-      <div class="site_contact_row"><b>Тел:</b>+7 (993) 448-69-80</div>
+
+      <div class="site_contact_row">
+        <b>Email:</b>
+        <a href="mailto:{{ page.email }}">{{ page.email }}</a>
+      </div>
+
+      {% assign tg = page.telegram | remove: '@' %}
+      <div class="site_contact_row">
+        <b>Telegram:</b>
+        <a href="https://t.me/{{ tg }}">@{{ tg }}</a>
+      </div>
 
       <div class="mt-3 d-flex flex-wrap gap-2">
         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#contactModal">
@@ -32,7 +38,18 @@ hh: <a href="https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b"
   <div class="col-12 col-lg-6">
     <div class="site_contact_card">
       <div class="site_contact_card_title">Профили</div>
-      <div class="site_contact_row"><b>HH:</b> <a href="https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b">Резюме</a></div>
+
+      {% if page.hh %}
+      <div class="site_contact_row">
+        <b>HH:</b> <a href="{{ page.hh }}">Резюме</a>
+      </div>
+      {% endif %}
+
+      {% if page.github %}
+      <div class="site_contact_row">
+        <b>GitHub:</b> <a href="{{ page.github }}">{{ page.github | remove: 'https://' }}</a>
+      </div>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -61,7 +78,7 @@ hh: <a href="https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b"
             <textarea class="form-control" rows="4" placeholder="Текст..."></textarea>
           </div>
 
-          <a class="btn btn-primary" href="mailto:you@mail.com">Открыть письмо</a>
+          <a class="btn btn-primary" href="mailto:{{ page.email }}">Открыть письмо</a>
         </form>
       </div>
     </div>
