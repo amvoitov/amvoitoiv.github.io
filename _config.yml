@@ -1,8 +1,8 @@
 title: "Имя Фамилия"
 description: "Руководитель проекта / продукта"
-theme: jekyll-theme-minimal
 
-show_downloads: false
-
-github:
-  is_project_page: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
