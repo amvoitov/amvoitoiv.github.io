@@ -17,11 +17,30 @@
         </div>
 
         <nav class="nav">
-          <a class="nav__link" href="{{ '/' | relative_url }}">Главная</a>
-          <a class="nav__link" href="{{ '/projects' | relative_url }}">Проекты</a>
-          <a class="nav__link" href="{{ '/about' | relative_url }}">Обо мне</a>
-          <a class="nav__link" href="{{ '/contact' | relative_url }}">Контакты</a>
-          <a class="nav__btn" href="{{ '/assets/files/portfolio.pdf' | relative_url }}">PDF</a>
+          <a
+            class="nav__link {% if page.url == '/' %}is-active{% endif %}"
+            href="{{ '/' | relative_url }}"
+          >Главная</a>
+
+          <a
+            class="nav__link {% if page.url contains '/projects' %}is-active{% endif %}"
+            href="{{ '/projects/' | relative_url }}"
+          >Проекты</a>
+
+          <a
+            class="nav__link {% if page.url contains '/about' %}is-active{% endif %}"
+            href="{{ '/about/' | relative_url }}"
+          >Обо мне</a>
+
+          <a
+            class="nav__link {% if page.url contains '/contact' %}is-active{% endif %}"
+            href="{{ '/contact/' | relative_url }}"
+          >Контакты</a>
+
+          <a
+            class="nav__btn"
+            href="{{ '/assets/files/portfolio.pdf' | relative_url }}"
+          >PDF</a>
         </nav>
       </div>
     </header>
