@@ -15,9 +15,12 @@ permalink: /artifacts/case_1/
     <div class="card shadow-sm h-100">
       <div class="card-body">
         <div class="d-flex align-items-start justify-content-between gap-2">
-          <h2 class="h6 mb-1">Артефакт 1 — Требования</h2>
+          <h2 class="h6 mb-1">Артефакт 1 </h2>
           <span class="badge text-bg-light border">Текст</span>
         </div>
+
+        <div class="fw-semibold mb-2">Требования</div>
+
         <p class="text-muted mb-3">
           Требования end-to-end: функциональные/нефункциональные, роли, сценарии, ограничения.
         </p>
@@ -32,7 +35,7 @@ permalink: /artifacts/case_1/
     <div class="card-body d-flex flex-column">
       <div class="d-flex align-items-start justify-content-between gap-2">
         <h3 class="h6 mb-1">Артефакт 2</h3>
-        <span class="badge text-bg-light border">KPI</span>
+        <span class="badge text-bg-light border">NSM+KPI</span>
       </div>
 
       <div class="fw-semibold mb-2">NSM и KPI-дерево</div>
