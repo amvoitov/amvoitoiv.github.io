@@ -9,7 +9,7 @@ case_short: "Блок обработки сигнала тензодатчика
 case_role: "PM / PO / аналитик / техлид / архитектор"
 case_period: "10.2021 → 11.2022+"
 case_team: "7+ участников"
-case_effect: "−70% потерь/воровства; +20% продаж БП"
+case_effect: "+20% продаж БП"
 case_artifacts_url: /artifacts/case_1/
 ---
 
