@@ -2,99 +2,55 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{{ page.title }} · {{ site.title }}</title>
-    <meta name="description" content="{{ site.description }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap (local) -->
-    <link rel="stylesheet" href="{{ '/assets/vendor/bootstrap_5_3_8/css/bootstrap.min.css' | relative_url }}">
+    <title>
+      {% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}
+    </title>
 
-    <!-- Your styles (after Bootstrap) -->
+    {% if site.description %}
+      <meta name="description" content="{{ site.description }}" />
+    {% endif %}
+
+    <!-- Bootstrap (локально) -->
+    <link rel="stylesheet" href="{{ '/assets/vendor/bootstrap-5.3.8-dist/css/bootstrap.min.css' | relative_url }}">
+
+    <!-- Ваши стили -->
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+
+    {% include head-custom.html %}
   </head>
 
-  <body>
-    <header class="site_header">
-      <div class="container site_container site_header_inner">
-        <div class="site_brand">
-          <div class="site_brand_title">{{ site.title }}</div>
-          <div class="site_brand_sub">{{ site.description }}</div>
-        </div>
+  <body class="bg-body-tertiary">
 
-        <nav class="site_nav" aria-label="Основная навигация">
-          <a class="site_nav_link {% if page.url == '/' %}is-active{% endif %}" href="{{ '/' | relative_url }}">Главная</a>
-          <a class="site_nav_link {% if page.url contains '/projects' %}is-active{% endif %}" href="{{ '/projects/' | relative_url }}">Кейсы</a>
-          <a class="site_nav_link {% if page.url contains '/about' %}is-active{% endif %}" href="{{ '/about/' | relative_url }}">Обо мне</a>
-          <a class="site_nav_link {% if page.url contains '/contact' %}is-active{% endif %}" href="{{ '/contact/' | relative_url }}">Контакты</a>
-          <div class="dropdown">
-            <button
-              class="site_nav_btn dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Скачать
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" href="{{ '/assets/files/portfolio.pdf' | relative_url }}" download>
-                  Скачать портфолио (PDF)
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="{{ '/assets/files/resume.pdf' | relative_url }}" download>
-                  Скачать резюме (PDF)
-                </a>
-              </li>
-            </ul>
-          </div>
-
-        </nav>
+    <!-- Header -->
+    <header class="border-bottom bg-white sticky-top">
+      <div class="container-xxl py-3">
+        {% include nav.html %}
       </div>
     </header>
 
-    <main class="container site_container site_main">
-      <main class="container-xxl py-4">
-        {{ content }}
-      </main>
+    <!-- Content -->
+    <main class="container-xxl py-4">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer class="site_footer">
-      <div class="container site_container footer__inner">
-        {% assign contact_page = site.pages | where: "id", "contact" | first %}
-
-        <span>© {{ site.title }}</span>
-
-        {% if contact_page %}
-          {% if contact_page.email %}
-            <span class="footer__sep">·</span>
-            <a href="mailto:{{ contact_page.email }}">{{ contact_page.email }}</a>
-          {% endif %}
-
-          {% if contact_page.telegram %}
-            {% assign tg = contact_page.telegram | remove: '@' %}
-            <span class="footer__sep">·</span>
-            <a href="https://t.me/{{ tg }}">@{{ tg }}</a>
-          {% endif %}
-
-          {% if contact_page.hh %}
-            <span class="footer__sep">·</span>
-            <a href="{{ contact_page.hh }}">HH</a>
-          {% endif %}
-
-          {% if contact_page.phone %}
-          {% assign phone_tel = contact_page.phone
-            | replace: ' ', ''
-            | replace: '(', ''
-            | replace: ')', ''
-            | replace: '-', '' %}
-            <span class="footer__sep">·</span>
-            <a href="tel:{{ phone_tel }}">{{ contact_page.phone }}</a>
-          {% endif %}
-        {% endif %}
+    <!-- Footer -->
+    <footer class="mt-4">
+      <div class="container-xxl pb-4">
+        {% include footer.html %}
       </div>
     </footer>
 
-    <!-- Bootstrap JS bundle (local, for modals/dropdowns/collapse) -->
-    <script src="{{ '/assets/vendor/bootstrap_5_3_8/js/bootstrap.bundle.min.js' | relative_url }}"></script>
+    <!-- Bootstrap JS (локально) -->
+    <script src="{{ '/assets/vendor/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js' | relative_url }}"></script>
   </body>
 </html>
