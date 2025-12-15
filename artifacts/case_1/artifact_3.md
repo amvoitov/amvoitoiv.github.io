@@ -29,9 +29,9 @@ permalink: /artifacts/case_1/artifact_3/
 
             <ul class="mb-3">
               <li><b>A1</b> Отобразить вес / выбрать режим</li>
-              <li><b>A2</b> Идентифицировать технику (RFID/ручной выбор) — <i>Свой-Чужой</i></li>
-              <li><b>A3</b> Сохранить транзакцию + чек — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
-              <li><b>A4</b> Отправить на сервер / положить в offline-очередь — <span class="badge text-bg-light border">ТЗ Сайт Сесовой</span></li>
+              <li><b>A2</b> Идентифицировать технику (RFID/ручной выбор)</li>
+              <li><b>A3</b> Сохранить транзакцию + чек</li>
+              <li><b>A4</b> Отправить на сервер / положить в offline-очередь</li>
             </ul>
 
             <div class="d-flex flex-wrap gap-2">
@@ -53,9 +53,9 @@ permalink: /artifacts/case_1/artifact_3/
             </div>
 
             <ul class="mb-3">
-              <li><b>B1</b> На сайте: ввести имя БВС + код, привязать БП к аккаунту — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
+              <li><b>B1</b> На сайте: ввести имя БВС + код, привязать БП к аккаунту</li>
               <li><b>B2</b> На планшете: “Зарегистрировать” и показать/отправить код</li>
-              <li><b>B3</b> История регистраций и защита от повторных/чужих привязок — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
+              <li><b>B3</b> История регистраций и защита от повторных/чужих привязок</li>
             </ul>
 
             <div class="d-flex flex-wrap gap-2">
@@ -75,11 +75,11 @@ permalink: /artifacts/case_1/artifact_3/
             </div>
 
             <ul class="mb-3">
-              <li><b>C1</b> Главная: календарь + карта + список БП и транзакций — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
+              <li><b>C1</b> Главная: календарь + карта + список БП и транзакций</li>
               <li><b>C2</b> Справочники: поля/техника/сотрудники</li>
-              <li><b>C3</b> Рейтинг сотрудников — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
-              <li><b>C4</b> Статистика/отчёты (техника/сотрудники/поля) — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
-              <li><b>C5</b> “Сообщить о проблеме” — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
+              <li><b>C3</b> Рейтинг сотрудников</li>
+              <li><b>C4</b> Статистика/отчёты (техника/сотрудники/поля)</li>
+              <li><b>C5</b> “Сообщить о проблеме”</li>
             </ul>
 
             <div class="d-flex flex-wrap gap-2">
@@ -101,9 +101,9 @@ permalink: /artifacts/case_1/artifact_3/
             </div>
 
             <ul class="mb-3">
-              <li><b>D1</b> Вход: организация + логин/пароль (из справочника) — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
-              <li><b>D2</b> Подтверждение: 6-значный код, подключение через ответственного — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
-              <li><b>D3</b> Календарь с подсветкой дат работ + просмотр поля/чека — <span class="badge text-bg-light border">ТЗ Web-Automation</span></li>
+              <li><b>D1</b> Вход: организация + логин/пароль</li>
+              <li><b>D2</b> Подтверждение: 6-значный код, подключение через ответственного</li>
+              <li><b>D3</b> Календарь с подсветкой дат работ + просмотр поля/чека</li>
             </ul>
 
             <div class="d-flex flex-wrap gap-2">
