@@ -1,31 +1,14 @@
-{% assign contact = site.pages | where_exp: "p", "p.url == '/contact/'" | first %}
+{% assign c = site.pages | where: "permalink", "/contact/" | first %}
 
-<footer class="py-4">
-  <div class="container">
-    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start text-muted small">
+<footer class="footer">
+  <div class="container-xxl px-3">
+    <div class="d-flex flex-wrap gap-2 align-items-center">
       <span>© {{ site.title }}</span>
 
-      {% if contact and contact.email %}
-        <a class="link-primary text-decoration-none" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
-      {% endif %}
-
-      {% if contact and contact.telegram %}
-        <a class="link-primary text-decoration-none" href="https://t.me/{{ contact.telegram }}">@{{ contact.telegram }}</a>
-      {% endif %}
-
-      {% if contact and contact.hh %}
-        <a class="link-primary text-decoration-none" href="{{ contact.hh }}">HH</a>
-      {% endif %}
-
-      {% if contact and contact.phone %}
-        <a class="link-primary text-decoration-none" href="tel:{{ contact.phone | replace: ' ', '' }}">
-          {{ contact.phone }}
-        </a>
-      {% endif %}
+      {% if c.email %}<span>·</span><a href="mailto:{{ c.email }}">{{ c.email }}</a>{% endif %}
+      {% if c.telegram_url and c.telegram %}<span>·</span><a href="{{ c.telegram_url }}" target="_blank" rel="noopener">{{ c.telegram }}</a>{% endif %}
+      {% if c.hh_url %}<span>·</span><a href="{{ c.hh_url }}" target="_blank" rel="noopener">HH</a>{% endif %}
+      {% if c.phone %}<span>·</span><a href="tel:{{ c.phone | replace: ' ', '' }}">{{ c.phone }}</a>{% endif %}
     </div>
   </div>
-
-<script src="{{ '/assets/vendor/bootstrap_5_3_8/js/bootstrap.bundle.min.js' | relative_url }}"></script>
-
-
 </footer>

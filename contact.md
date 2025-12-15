@@ -2,10 +2,12 @@
 title: "Контакты"
 permalink: /contact/
 email: "andr@vojtov.ru"
-telegram: "byrnison12"
+telegram: "@byrnison12"
+telegram_url: "https://t.me/byrnison12"
 phone: "+7 (993) 448-69-80"
-hh: "ВСТАВЬ_ССЫЛКУ_НА_HH"
+hh_url: "https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b"
 ---
+
 
 # Контакты
 

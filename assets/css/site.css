@@ -1,43 +1,90 @@
 :root{
-  --bg: #f6f7f9;
+  --border:#e6e8ef;
+  --shadow:0 12px 36px rgba(16,24,40,.08);
+  --radius:18px;
 }
 
 body{
-  background: var(--bg);
+  background:#f6f7fb;
 }
 
-.navbar{
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background: rgba(248,249,250,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
   box-shadow: 0 6px 18px rgba(16,24,40,.06);
 }
 
-.card{
-  border-color: rgba(16,24,40,.08);
+.navbar-brand{
+  gap:2px;
+}
+.brand-title{
+  font-weight: 800;
+  font-size: 1.1rem;
+  color:#111827;
+  line-height: 1.1;
+}
+.brand-subtitle{
+  font-size:.9rem;
+  color:#6b7280;
+  line-height: 1.1;
 }
 
-.card.rounded-4{
-  border-radius: 18px !important;
+.page-shell{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 576px){
+  .page-shell{ padding: 18px; }
 }
 
 .nav-link{
   border-radius: 12px;
-  padding: .5rem .75rem;
 }
-
 .nav-link.active{
-  background: rgba(13,110,253,.12);
-  color: #0d6efd !important;
+  background:#eaf2ff;
+  border:1px solid #b9d3ff;
 }
 
-.btn{
-  border-radius: 12px;
+.footer{
+  color:#6b7280;
+  font-size:.95rem;
+  padding: 22px 0 34px;
+}
+.footer a{
+  text-decoration:none;
+}
+.footer a:hover{
+  text-decoration:underline;
 }
 
-footer{
-  margin-top: -10px;
+/* Мелкая косметика для карточек кейсов */
+.case-badge{
+  border:1px solid var(--border);
+  background:#f8fafc;
+  color:#111827;
 }
-
-@media (max-width: 575.98px){
-  main .card-body{
-    padding: 18px !important;
-  }
+.kv-box{
+  border:1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background:#fff;
+  height: 100%;
+}
+.kv-label{
+  font-size:.82rem;
+  color:#6b7280;
+}
+.kv-value{
+  font-weight: 700;
+  color:#111827;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }

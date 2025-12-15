@@ -1,21 +1,19 @@
-{% assign u = page.url | default: '' %}
+{% assign u = page.url %}
 
-<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-semibold" href="{{ '/' | relative_url }}">
-      {{ site.title }}
-      <div class="small text-muted fw-normal">{{ site.description }}</div>
+<nav class="site-header navbar navbar-expand-lg">
+  <div class="container-xxl px-3">
+    <a class="navbar-brand d-flex flex-column" href="{{ '/' | relative_url }}">
+      <span class="brand-title">{{ site.title }}</span>
+      <span class="brand-subtitle">{{ site.description }}</span>
     </a>
 
-    <button class="navbar-toggler" type="button"
-      data-bs-toggle="collapse" data-bs-target="#topNav"
-      aria-controls="topNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav"
+      aria-controls="siteNav" aria-expanded="false" aria-label="Меню">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="topNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-
+    <div class="collapse navbar-collapse" id="siteNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
         <li class="nav-item">
           <a class="nav-link {% if u == '/' %}active{% endif %}" href="{{ '/' | relative_url }}">Главная</a>
         </li>
@@ -32,11 +30,11 @@
           <a class="nav-link {% if u contains '/contact' %}active{% endif %}" href="{{ '/contact/' | relative_url }}">Контакты</a>
         </li>
 
-        <li class="nav-item dropdown ms-lg-2">
-          <a class="btn btn-outline-primary dropdown-toggle" href="#"
-             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown">
+          <button class="btn btn-outline-secondary dropdown-toggle ms-lg-2" type="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
             Скачать
-          </a>
+          </button>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
               <a class="dropdown-item" href="{{ '/assets/files/portfolio.pdf' | relative_url }}" download>
@@ -44,13 +42,12 @@
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="{{ '/assets/files/resume.pdf' | relative_url }}" download>
+              <a class="dropdown-item" href="{{ '/assets/files/cv.pdf' | relative_url }}" download>
                 Скачать резюме (PDF)
               </a>
             </li>
           </ul>
         </li>
-
       </ul>
     </div>
   </div>
