@@ -1,47 +1,43 @@
 <!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="{{ site.lang | default: 'ru-RU' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <title>
+    {% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}
+  </title>
 
-    {% if site.description %}
-      <meta name="description" content="{{ site.description }}" />
-    {% endif %}
+  <!-- Bootstrap (local) -->
+  <link rel="stylesheet" href="{{ '/assets/vendor/bootstrap_5_3_8/css/bootstrap.min.css' | relative_url }}">
 
-    <!-- Bootstrap (локально) -->
-    <link rel="stylesheet" href="{{ '/assets/vendor/bootstrap-5_3_8/css/bootstrap.min.css' | relative_url }}">
+  <!-- Your styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
 
-    <!-- Ваши стили -->
-    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+<body class="bg-body-tertiary">
 
-    {% include head-custom.html %}
-  </head>
+<header class="site-header">
+  <div class="container site-container py-3 d-flex align-items-center justify-content-between gap-3">
+    <div class="d-flex flex-column">
+      <a class="site-brand text-decoration-none" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <div class="site-subtitle">{{ site.description }}</div>
+    </div>
 
-  <body class="bg-body-tertiary">
+    {% include nav.html %}
+  </div>
+</header>
 
-    <header class="border-bottom bg-white sticky-top">
-      <div class="container-xxl py-3">
-        {% include nav.html %}
-      </div>
-    </header>
+<main class="container site-container my-4 my-md-5">
+  <div class="page-card">
+    {{ content }}
+  </div>
+</main>
 
-    <main class="container-xxl py-4">
-      <div class="card shadow-sm">
-        <div class="card-body p-4 p-md-5">
-          {{ content }}
-        </div>
-      </div>
-    </main>
+{% include footer.html %}
 
-    <footer class="mt-4">
-      <div class="container-xxl pb-4">
-        {% include footer.html %}
-      </div>
-    </footer>
+<!-- Bootstrap JS (local, bundle includes Popper) -->
+<script src="{{ '/assets/vendor/bootstrap_5_3_8/js/bootstrap.bundle.min.js' | relative_url }}"></script>
 
-    <!-- Bootstrap JS (локально) -->
-    <script src="{{ '/assets/vendor/bootstrap-5_3_8/js/bootstrap.bundle.min.js' | relative_url }}"></script>
-  </body>
+</body>
 </html>

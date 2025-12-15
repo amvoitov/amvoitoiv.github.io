@@ -1,8 +1,15 @@
 title: "Войтов Андрей Михайлович"
 description: "Руководитель проекта / продукта"
+lang: "ru-RU"
 
 url: "https://amvoitov.github.io"
 baseurl: ""
+
+markdown: kramdown
+permalink: pretty
+
+# Важно: отключаем тему, чтобы не мешала нашим layout'ам и стилям
+theme: null
 
 defaults:
   - scope:

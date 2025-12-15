@@ -1,301 +1,86 @@
 :root{
-  --bg:#f6f8fa;
-  --card:#ffffff;
-  --text:#111827;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-  --link:#2563eb;
-  --shadow: 0 1px 2px rgba(16,24,40,.06);
-  --gutter: 20px;
+  --site-radius: 18px;
+  --site-shadow: 0 10px 30px rgba(16, 24, 40, .08);
+  --site-border: rgba(16, 24, 40, .10);
 }
 
-*{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; }
-
-body{
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
+.site-container{
+  max-width: 1120px;
 }
 
-a{ color:var(--link); text-decoration:none; }
-a:hover{ text-decoration:underline; }
-
-.site_container{
-  max-width: 1040px;
-  padding-left: max(var(--gutter), env(safe-area-inset-left));
-  padding-right: max(var(--gutter), env(safe-area-inset-right));
-}
-
-/* Header */
-.site_header{
+.site-header{
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(246,248,250,.92);
+  z-index: 1020;
+  background: rgba(248, 249, 250, .92);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 6px 18px rgba(16,24,40,.06);
+  border-bottom: 1px solid var(--site-border);
 }
 
-.site_header_inner{
-  display:flex;
-  gap:16px;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 0;
-}
-
-.site_brand_title{
-  font-size: 18px;
+.site-brand{
+  color: #111827;
   font-weight: 800;
+  letter-spacing: .2px;
+  line-height: 1.1;
 }
 
-.site_brand_sub{
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 2px;
+.site-subtitle{
+  color: #6b7280;
+  font-size: .92rem;
+  margin-top: .25rem;
 }
 
-/* Nav */
-.site_nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
+.page-card{
+  background: #fff;
+  border: 1px solid var(--site-border);
+  border-radius: var(--site-radius);
+  box-shadow: var(--site-shadow);
+  padding: 28px;
 }
 
-.site_nav_link{
-  padding: 8px 10px;
-  border-radius: 12px;
-  color: var(--text);
-  border: 1px solid transparent;
-  transition: background .12s ease, border-color .12s ease, transform .04s ease;
+@media (max-width: 575.98px){
+  .page-card{ padding: 18px; }
 }
 
-.site_nav_link:hover{
-  background: rgba(17,24,39,.06);
-  border-color: rgba(17,24,39,.10);
-  text-decoration:none;
-}
-
-.site_nav_link:active{
-  transform: translateY(1px);
-  background: rgba(17,24,39,.10);
-  border-color: rgba(17,24,39,.16);
-}
-
-.site_nav_link:focus-visible{
-  outline: 3px solid rgba(37,99,235,.25);
-  outline-offset: 2px;
-}
-
-.site_nav_link.is-active{
-  background: rgba(37,99,235,.10);
-  border-color: rgba(37,99,235,.25);
-  color: #1d4ed8;
-}
-
-.site_nav_btn{
-  padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card);
-  box-shadow: var(--shadow);
-  font-weight: 800;
-  color: var(--text);
-  transition: border-color .12s ease, transform .04s ease, box-shadow .12s ease, background .12s ease;
-}
-
-.site_nav_btn:hover{
-  text-decoration:none;
-  border-color:#d1d5db;
-  box-shadow: 0 6px 16px rgba(16,24,40,.10);
-}
-
-.site_nav_btn:active{
-  transform: translateY(1px);
-  box-shadow: 0 2px 8px rgba(16,24,40,.08);
-}
-
-.site_nav_btn:focus-visible{
-  outline: 3px solid rgba(37,99,235,.25);
-  outline-offset: 2px;
-}
-
-/* Main */
-.site_main{ padding: 26px 0 40px; }
-
-.site_content{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 22px 22px;
-  box-shadow: var(--shadow);
-}
-
-/* Typography */
-h1{ font-size: 28px; margin: 0 0 12px; }
-h2{ font-size: 20px; margin: 18px 0 10px; }
-h3{ font-size: 16px; margin: 14px 0 8px; }
-p{ margin: 10px 0; }
-hr{ border:0; border-top:1px solid var(--border); margin: 16px 0; }
-
-/* Buttons inside content (custom) */
-.site_btn{
-  display:inline-block;
-  padding: 10px 14px;
-  margin: 6px 10px 6px 0;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card);
-  box-shadow: var(--shadow);
-  font-weight: 700;
-  color: var(--text);
-  transition: border-color .12s ease, transform .04s ease, box-shadow .12s ease;
-}
-.site_btn:hover{
-  text-decoration:none;
-  border-color:#d1d5db;
-  box-shadow: 0 6px 16px rgba(16,24,40,.10);
-}
-.site_btn:active{
-  transform: translateY(1px);
-  box-shadow: 0 2px 8px rgba(16,24,40,.08);
-}
-.site_btn:focus-visible{
-  outline: 3px solid rgba(37,99,235,.25);
-  outline-offset: 2px;
-}
-
-/* Project cards (custom) */
-.site_card{
-  display:block;
-  padding: 16px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--card);
-  box-shadow: var(--shadow);
-  color: var(--text);
-  transition: border-color .12s ease, transform .04s ease, box-shadow .12s ease;
-}
-.site_card:hover{
-  text-decoration:none;
-  border-color:#d1d5db;
-  box-shadow: 0 8px 18px rgba(16,24,40,.10);
-}
-.site_card:active{
-  transform: translateY(1px);
-  box-shadow: 0 3px 10px rgba(16,24,40,.08);
-}
-
-.site_card_title{ font-weight: 900; margin-bottom: 6px; }
-.site_card_meta{ font-size: 13px; color: var(--muted); margin-bottom: 10px; }
-.site_card_text{ margin:0 0 10px 0; color: var(--text); }
-
-.tag{
-  display:inline-block;
-  padding: 4px 10px;
-  margin: 0 8px 8px 0;
-  border: 1px solid var(--border);
+/* Nav pills look */
+.navbar .nav-link{
   border-radius: 999px;
-  font-size: 12px;
-  color: var(--muted);
+  padding: .55rem .85rem;
+  font-weight: 600;
+  color: #111827;
 }
 
-/* Case header + KPI */
-.site_case_head{
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 14px 16px;
-  background: var(--bg);
-  margin: 12px 0 16px;
+.navbar .nav-link:hover{
+  background: rgba(13, 110, 253, .08);
 }
-.site_kpi{
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 10px 12px;
-  background: var(--card);
-  box-shadow: var(--shadow);
-}
-.site_kpi_label{ font-size: 12px; color: var(--muted); }
-.site_kpi_value{ font-weight: 900; margin-top: 4px; }
 
-/* Contacts page */
-.site_contact_card{
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 14px 16px;
-  background: var(--card);
-  box-shadow: var(--shadow);
+.navbar .nav-link.active{
+  background: rgba(13, 110, 253, .14);
+  color: #0d6efd;
+  box-shadow: inset 0 0 0 1px rgba(13,110,253,.35);
 }
-.site_contact_card_title{ font-weight: 900; margin-bottom: 6px; }
-.site_contact_row{ color: var(--muted); margin: 6px 0; }
-.site_contact_row b{ color: var(--text); }
+
+.btn-download{
+  border-radius: 999px;
+  font-weight: 700;
+}
 
 /* Footer */
-.site_footer{ padding: 18px 0 26px; color: var(--muted); }
-.footer__inner{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  align-items:center;
-  font-size: 12px;
-}
-.footer__sep{ opacity:.5; }
-
-/* Responsive */
-@media (max-width: 920px){
-  .site_header_inner{ align-items:flex-start; flex-direction:column; }
-}
-@media (max-width: 600px){
-  :root { --gutter: 14px; }
-  .site_main{ padding: 18px 0 28px; }
-  .site_content{ padding: 16px; border-radius: 14px; }
-  .site_header_inner{ padding: 12px 0; }
-}
-@media (max-width: 380px){
-  :root { --gutter: 12px; }
-}
-.site_nav_btn.dropdown-toggle::after {
-  margin-left: 10px;
-  vertical-align: middle;
-}
-/* Высота шапки сайта (подстрой, если нужно). */
-:root{
-  --site_header_h: 78px;
+.site-footer{
+  border-top: 1px solid var(--site-border);
+  background: transparent;
 }
 
-/* Sticky только на десктопе, чтобы на мобиле не съедало экран */
-@media (min-width: 992px){
-  .case_topbar{
-    position: sticky;
-    top: calc(var(--site_header_h) + 12px);
-    z-index: 40;
-  }
+.footer-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
 }
 
-/* Чтобы при залипании выглядело аккуратно */
-.case_topbar_card{
-  border-radius: 16px;
+.footer-links a{
+  text-decoration: none;
 }
 
-/* чуть “компактнее” KPI-карточки */
-.case_kpi_card{
-  border-radius: 14px;
-}
-
-/* Чтобы якоря/заголовки не уезжали под шапку при переходах */
-h2, h3, h4{
-  scroll-margin-top: calc(var(--site_header_h) + 160px);
-}
-/* Контент шире и аккуратнее на широких экранах */
-@media (min-width: 1400px){
-  .container-xxl { max-width: 1320px; }
-}
-
-/* Чуть больше воздуха на мобиле */
-@media (max-width: 576px){
-  main.container-xxl { padding-left: 12px; padding-right: 12px; }
+.footer-links a:hover{
+  text-decoration: underline;
 }

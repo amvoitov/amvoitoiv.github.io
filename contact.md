@@ -1,79 +1,88 @@
 ---
 title: "Контакты"
 permalink: /contact/
-id: contact
 
-email: andr@vojtov.ru
-telegram: byrnison12
-phone: +7 (993) 448-69-80
-hh: https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b
+email: "andr@vojtov.ru"
+telegram: "@byrnison12"
+telegram_url: "https://t.me/byrnison12"
+
+phone: "+7 (993) 448-69-80"
+phone_tel: "+79934486980"
+
+hh_url: "ВСТАВЬ_ССЫЛКУ_НА_HH"
 ---
 
 # Контакты
 
-<div class="row g-3 mt-1">
+<div class="row g-3">
   <div class="col-12 col-lg-6">
-    <div class="site_contact_card">
-      <div class="site_contact_card_title">Связаться</div>
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Связаться</h5>
 
-      <div class="site_contact_row">
-        <b>Email:</b>
-        <a href="mailto:{{ page.email }}">{{ page.email }}</a>
-      </div>
+        <div class="mb-2"><b>Email:</b> <a href="mailto:{{ page.email }}">{{ page.email }}</a></div>
+        <div class="mb-2"><b>Telegram:</b> <a href="{{ page.telegram_url }}" target="_blank" rel="noopener">{{ page.telegram }}</a></div>
+        <div class="mb-2"><b>Телефон:</b> <a href="tel:{{ page.phone_tel }}">{{ page.phone }}</a></div>
 
-      {% assign tg = page.telegram | remove: '@' %}
-      <div class="site_contact_row">
-        <b>Telegram:</b>
-        <a href="https://t.me/{{ tg }}">@{{ tg }}</a>
-      </div>
-
-      <div class="site_contact_row">
-        <b>Телефон:</b>
-          <a href="tel:{{ page.phone | replace: ' ', '' | replace: '(', '' | replace: ')', '' | replace: '-', '' }}">{{ page.phone }}</a>
+        <button class="btn btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#contactModal">
+          Написать сообщение
+        </button>
       </div>
     </div>
   </div>
 
   <div class="col-12 col-lg-6">
-    <div class="site_contact_card">
-      <div class="site_contact_card_title">Профили</div>
-
-      {% if page.hh %}
-      <div class="site_contact_row">
-        <b>HH:</b> <a href="{{ page.hh }}">Резюме</a>
+    <div class="card h-100 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Профили</h5>
+        <div class="mb-2"><b>HH:</b> <a href="{{ page.hh_url }}" target="_blank" rel="noopener">Резюме</a></div>
       </div>
-      {% endif %}
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="contactModalLabel">Сообщение</h5>
+        <h5 class="modal-title">Сообщение</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
       </div>
 
       <div class="modal-body">
-        <div class="alert alert-light border">
-          Это статический сайт (GitHub Pages). Форма не отправляет данные — используй Email/Telegram.
+        <div class="alert alert-light border mb-3">
+          Это статический сайт. Кнопка откроет письмо в вашем почтовом клиенте (Email/Telegram).
         </div>
 
-        <form>
-          <div class="mb-3">
-            <label class="form-label">Тема</label>
-            <input class="form-control" type="text" placeholder="Например: Вакансия PM/PO" />
-          </div>
+        <div class="mb-3">
+          <label class="form-label">Тема</label>
+          <input id="mailSubject" class="form-control" placeholder="Например: Вакансия PM/PO">
+        </div>
 
-          <div class="mb-3">
-            <label class="form-label">Сообщение</label>
-            <textarea class="form-control" rows="4" placeholder="Текст..."></textarea>
-          </div>
+        <div class="mb-3">
+          <label class="form-label">Сообщение</label>
+          <textarea id="mailBody" class="form-control" rows="5" placeholder="Текст..."></textarea>
+        </div>
+      </div>
 
-          <a class="btn btn-primary" href="mailto:{{ page.email }}">Открыть письмо</a>
-        </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="openMailBtn">Открыть письмо</button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('openMailBtn');
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const subject = encodeURIComponent(document.getElementById('mailSubject')?.value || 'Вакансия PM/PO');
+    const body = encodeURIComponent(document.getElementById('mailBody')?.value || '');
+    const to = "{{ page.email }}";
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  });
+});
+</script>
