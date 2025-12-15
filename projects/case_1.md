@@ -1,6 +1,6 @@
 ---
 layout: case
-title: "Кейс 1: Весовая ЛИЛИАНИ"
+title: "Кейс 1: Весовая бункера-перегрузчика для контроля убраного зерна"
 permalink: /projects/case_1/
 
 case_title_short: "Весовая ЛИЛИАНИ"
