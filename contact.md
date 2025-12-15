@@ -28,7 +28,7 @@ hh_url: "https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b"
     <div class="card shadow-sm h-100 rounded-4">
       <div class="card-body p-4">
         <div class="fw-semibold mb-2">Профили</div>
-        <div class="mb-2"><b>HH:</b> <a href="{{ page.hh }}">Резюме</a></div>
+        <div class="mb-2"><b>HH:</b> <a href="https://rostov.hh.ru/resume/b4d7a9aaff0ba1a6c80039ed1f656c626b436b">Резюме</a></div>
       </div>
     </div>
   </div>
